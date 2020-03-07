@@ -95,6 +95,7 @@ class Application(tornado.web.Application):
             (r"/utilities-color.html", ColorHandler),
             (r"/utilities-other.html", OtherHandler),
             (r"/bilibili.html", bilibiliHandler),
+            (r"/google-mirror.html", googleHandler),
             # (r"/ocr-api", OcrApiHandler),
             # (r"/python-api", PythonApiHandler),
             # (r"/similarity-api", SimilarityApiHandler),
@@ -587,6 +588,10 @@ class EntryPageHandler(BaseHandler):
 class bilibiliHandler(BaseHandler):
     def get(self):
         self.render("bilibili.html")
+
+class googleHandler(BaseHandler):
+    def get(self):
+        self.render("google.html")
         
         
 async def main():
